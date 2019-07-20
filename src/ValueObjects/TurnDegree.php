@@ -2,6 +2,8 @@
 
 namespace RobotSimulator\ValueObjects;
 
+use RobotSimulator\Exceptions\InvalidDegreeException;
+
 class TurnDegree
 {
     const NORTH = 'north', EAST = 'east', SOUTH = 'south', WEST = 'west';
@@ -10,6 +12,9 @@ class TurnDegree
 
     public static function from(int $degree) : self
     {
+        if(!in_array($degree, [0,90,180,270])) {
+            throw InvalidDegreeException::forDegree($degree);
+        }
         $instance = new self;
         $instance->degree = $degree;
         return $instance;

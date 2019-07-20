@@ -20,4 +20,10 @@ final class TurnDegreeTest extends TestCase
         $turnDegree = $turnDegree->right();
         $this->assertEquals(\RobotSimulator\ValueObjects\TurnDegree::WEST, (string) $turnDegree);
     }
+
+    public function test_invalid_degree()
+    {
+        $this->expectException(\RobotSimulator\Exceptions\InvalidDegreeException::class);
+        \RobotSimulator\ValueObjects\TurnDegree::from(1);
+    }
 }
