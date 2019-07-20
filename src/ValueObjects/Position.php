@@ -25,11 +25,11 @@ class Position
         $position = (string) $turnDegree;
         $instance = clone $this;
         if(TurnDegree::NORTH == $position) {
-            $instance->y -= 1;
+            $instance->y += 1;
         } elseif(TurnDegree::EAST == $position) {
             $instance->x += 1;
         } elseif(TurnDegree::SOUTH == $position) {
-            $instance->y += 1;
+            $instance->y -= 1;
         } elseif(TurnDegree::WEST == $position) {
             $instance->x -= 1;
         }
