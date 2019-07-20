@@ -26,4 +26,12 @@ final class TurnDegreeTest extends TestCase
         $this->expectException(\RobotSimulator\Exceptions\InvalidDegreeException::class);
         \RobotSimulator\ValueObjects\TurnDegree::from(1);
     }
+
+    public function test_comparable()
+    {
+        $this->assertEquals(\RobotSimulator\ValueObjects\TurnDegree::from(0),
+            \RobotSimulator\ValueObjects\TurnDegree::from(0));
+        $this->assertNotEquals(\RobotSimulator\ValueObjects\TurnDegree::from(90),
+            \RobotSimulator\ValueObjects\TurnDegree::from(0));
+    }
 }

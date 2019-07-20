@@ -13,4 +13,12 @@ final class PositionTest extends TestCase
 
         $this->assertEquals('1,0', (string) $position);
     }
+
+    public function test_comparable()
+    {
+        $this->assertEquals(\RobotSimulator\ValueObjects\Position::from(0,0),
+            \RobotSimulator\ValueObjects\Position::from(0,0));
+        $this->assertNotEquals(\RobotSimulator\ValueObjects\Position::from(0,1),
+            \RobotSimulator\ValueObjects\Position::from(0,0));
+    }
 }
