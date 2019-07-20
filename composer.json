@@ -1,0 +1,17 @@
+{
+    "name": "douma/robot-simulator-php",
+    "authors": [
+        {
+            "name": "Stefan Douma",
+            "email": "douma@live.nl"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "RobotSimulator\\": "src"
+        }
+    },
+    "require": {
+        "phpunit/phpunit": "^8.2"
+    }
+}
