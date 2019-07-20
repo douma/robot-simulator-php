@@ -22,6 +22,13 @@ class TurnDegree
         return $instance;
     }
 
+    public function right() : self
+    {
+        $instance = new self;
+        $instance->degree = $this->degree == 360 ? 90 : $this->degree += 90;
+        return $instance;
+    }
+
     public function __toString() : string
     {
         if($this->degree == 0) {
